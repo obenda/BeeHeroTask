@@ -1,10 +1,10 @@
 # BeeHero Task - Oz Ben-David
 
 ## So, what did I used?
-- Created the project using TypeORM - we examined it in my previous work it is great but was really complicated to incorporate it in already existing big project
+- Created the project using TypeORM - We examined it in my previous work, it is great, we didn't incorporated it since it was really complicated to incorporate it in already existing big project, so it was nice to play with it a bit now
 - TypeScript of course
 - Used Postgres using docker image
-- Used Standard (ts) for linting
+- Used [Standard (ts)](https://standardjs.com/) for linting
 - Express & Axios
 - Used dotenv and put important information in the .env file
 - Run and tested on Ubuntu 20.04 LTS (over Windows WSL2)
@@ -32,19 +32,19 @@ I will send you my .env file by email
 - Installing docker (https://docs.docker.com/engine/install/ubuntu/#prerequisites)
   - on ubuntu I also had to follow this twick https://github.com/docker/for-linux/issues/1406#issuecomment-1183487816 which make the docker to run
 - running the docker and postgress
-  - I didn't configured it to run as non-root user so sudo is needed
+  - I didn't configured it to run as non-root user so `sudo` was needed
   - run `sudo service docker start`
   - run `sudo docker run --name local-postgres -e POSTGRES_PASSWORD=[the db password] -e POSTGRES_USER=postgres -e POSTGRES_DB=BeeHeroTask -d -p 5432:5432 postgres`
   - (run `sudo docker restart local-postgres` if you are turning it off\restart your laptop)
-- Grab the code and run `npm install`
-- create `.env` file containing all the variables described above
-- run `npm start` (uses nodemon)
+- Grab the code, in its root folder `npm install`
+- in its root folder create `.env` file containing all the variables described above
+- run `npm start` (uses nodemon for easy development, but can be removed later)
 
 That's all
 
 When the server is comming up, it first try to connect to the database and to fetch all the location and 3 days forcast information and saving those in the data base
 
-Once it is up, there are 3 endpoints as requested
+Once it is up, it exposes the 3 endpoints as requested
 
 ## The API
 
